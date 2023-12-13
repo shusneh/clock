@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timeout_functions</title>
+</head>
+<body style="background-color: hsl(0, 0%, 13%); color: rgb(64, 150, 225);">
+    <div style="text-align: center;">
+        <h1>this is shubhanshu sneh</h1>
+    <button id="stop" style="background-color: brown; width: 100px; height: 50px; border-radius: 10px;">
+    stop
+    </button>
+    <button id="resume" style="background-color: brown; width: 100px; height: 50px; border-radius: 10px;">
+        resume
+        </button>
+    </div>
+    </body>
+<script>
+    const change=function(){
+        const tim=new Date();
+        document.querySelector('h1').innerHTML= tim.toTimeString()
+
+    }
+    let stop;
+
+    //setTimeout(change,2000)
+  
+  document.querySelector('#resume').addEventListener('click',function () {
+    if(!stop)stop= setInterval(change,1000);
+   
+    console.log('started')
+  })
+  document.querySelector('#stop').addEventListener('click',function () {
+    clearInterval(stop);
+    stop=null
+    console.log('stopped')
+  })
+   
+</script>
+</html>
